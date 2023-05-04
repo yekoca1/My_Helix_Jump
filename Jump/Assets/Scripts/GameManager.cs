@@ -12,12 +12,11 @@ public class GameManager : MonoBehaviour
 {
    private int score = 0;
    public TextMeshProUGUI scoreText;
+   public string nextLevelName;
     void Start()
     {
         scoreText = GameObject.FindObjectOfType<TextMeshProUGUI>();
     }
-
-
 
     void Update()
     {
@@ -34,4 +33,11 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    public void nextLevel()
+    {
+            Debug.Log("Game Manager çalışıyor");
+            SceneManager.LoadScene(nextLevelName);
+    }
 }
+

@@ -34,10 +34,13 @@ public class Ball : MonoBehaviour
             gm.restartGame();
         }
 
-        else if(name == "Bitis(Instance)")
+        else if(name == "Bitis (Instance)")
         {
-            Debug.Log("NextLevel");
+            Debug.Log("Ball çalışıyor");
+            gm.nextLevel();
         }
 
     }
 }
+
+

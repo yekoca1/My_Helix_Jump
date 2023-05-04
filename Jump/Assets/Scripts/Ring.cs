@@ -15,6 +15,7 @@ public class Ring : MonoBehaviour
     {
         if(transform.position.y + 12f >= ball.position.y )
         {
+            Debug.Log("ok");
             Destroy(gameObject);
             gm.GameScore(25);
         }
