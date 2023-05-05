@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Ball : MonoBehaviour
 {
     public Rigidbody rb;
     public float jumpForce;
-    private GameManager gm;
-
+    public GameManager gm;
+    public GameObject restartButton;
+    public GameObject nextButton;
     public GameObject splashPrefab;
     void Start()
     {
         gm = GameObject.FindObjectOfType<GameManager>();
         rb = GetComponent<Rigidbody>();
+        restartButton.SetActive(false);
+        nextButton.SetActive(false); 
+        //gm.winText.gameObject.SetActive(false);
+       
     }
 
     // Update is called once per frame
@@ -31,12 +37,16 @@ public class Ball : MonoBehaviour
 
         if(name == "unsafeMaterial (Instance)")
         {
-            gm.restartGame();
+            Time.timeScale = 0;
+            restartButton.SetActive(true);
+
         }
 
-        else if(name == "Bitis(Instance)")
+        else if(name == "Bitis (Instance)")
         {
-            Debug.Log("NextLevel");
+            Time.timeScale = 0;
+            nextButton.SetActive(true);
+            //gm.winText.gameObject.SetActive(true);
         }
 
     }

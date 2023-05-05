@@ -12,12 +12,14 @@ public class GameManager : MonoBehaviour
 {
    private int score = 0;
    public TextMeshProUGUI scoreText;
+   //public TextMeshProUGUI winText;
+   public string nextLevelName = "Level2";
+   //public static GameManager instance;
     void Start()
     {
         scoreText = GameObject.FindObjectOfType<TextMeshProUGUI>();
+        //winText = GameObject.FindObjectOfType<TextMeshProUGUI>();
     }
-
-
 
     void Update()
     {
@@ -33,5 +35,12 @@ public class GameManager : MonoBehaviour
     public void restartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1;
+    }
+
+    public void nextLevel()
+    {
+        SceneManager.LoadScene(nextLevelName);
+        Time.timeScale = 1;
     }
 }
