@@ -8,7 +8,14 @@ EditorUserSettings:
     RecentlyUsedSceneGuid-0:
       value: 015002055750505a5a5b542116215d44154f1a782f712769297f4866b2b7656b
       flags: 0
+<<<<<<< Updated upstream
     RecentlyUsedSceneGuid-1:
+=======
+    RecentlyUsedSceneGuid-2:
+      value: 5150050507065a0958560d2012275e44144f417a2870246329784d66e7b8613e
+      flags: 0
+    RecentlyUsedSceneGuid-3:
+>>>>>>> Stashed changes
       value: 5a5757560101590a5d0c0e24427b5d44434e4c7a7b7a23677f2b4565b7b5353a
       flags: 0
     vcSharedLogLevel:
