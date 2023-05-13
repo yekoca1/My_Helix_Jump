@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 3860250956761837953}
   - component: {fileID: 3860250956761837954}
   - component: {fileID: 3860250956761837982}
-  - component: {fileID: 3860250956761837981}
   - component: {fileID: 3860250956761837980}
+  - component: {fileID: 1017173239748212161}
   m_Layer: 0
   m_Name: Top
   m_TagString: Untagged
@@ -116,21 +116,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 0
---- !u!114 &3860250956761837981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3860250956761837955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8810f70836cfa4b40b7c3021c7e10f91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 3860250956761837982}
-  jumpForce: 7
-  splashPrefab: {fileID: 4748623326402068514, guid: d398880f0a7501a41b8325f9f3671623, type: 3}
 --- !u!96 &3860250956761837980
 TrailRenderer:
   serializedVersion: 2
@@ -239,3 +224,20 @@ TrailRenderer:
   m_MinVertexDistance: 0.05
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!114 &1017173239748212161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3860250956761837955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8810f70836cfa4b40b7c3021c7e10f91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 3860250956761837982}
+  jumpForce: 7
+  restartButton: {fileID: 0}
+  nextButton: {fileID: 0}
+  splashPrefab: {fileID: 0}

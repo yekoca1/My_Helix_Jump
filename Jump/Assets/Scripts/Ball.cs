@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Ball : MonoBehaviour
 {
     public Rigidbody rb;
     public float jumpForce;
-    private GameManager gm;
-
+    public GameManager gm;
+    public GameObject restartButton;
+    public GameObject nextButton;
+    public GameObject quitButton;
     public GameObject splashPrefab;
     public GameObject backVoice;
     public voiceController vc;  // hit sesi için
@@ -20,6 +23,11 @@ public class Ball : MonoBehaviour
         fs = GameObject.FindObjectOfType<FinishSounder>();
         fail = GameObject.FindObjectOfType<FailedSounder>();
         rb = GetComponent<Rigidbody>();
+        restartButton.SetActive(false);
+        nextButton.SetActive(false); 
+        quitButton.SetActive(false);
+        //gm.winText.gameObject.SetActive(false);
+       
     }
 
     // Update is called once per frame
@@ -39,31 +47,21 @@ public class Ball : MonoBehaviour
 
         if(name == "unsafeMaterial (Instance)")
         {
-<<<<<<< Updated upstream
-            gm.restartGame();
-=======
             Time.timeScale = 0;
             fail.GetComponent<AudioSource>().Play();
             backVoice.GetComponent<AudioSource>().Stop();
             restartButton.SetActive(true);
+            quitButton.SetActive(true);
 
->>>>>>> Stashed changes
         }
 
         else if(name == "Bitis (Instance)")
         {
-<<<<<<< Updated upstream
-            Debug.Log("Ball çalışıyor");
-            gm.nextLevel();
-=======
             Time.timeScale = 0;
             fs.soundPlay();
             nextButton.SetActive(true);
             //gm.winText.gameObject.SetActive(true);
->>>>>>> Stashed changes
         }
 
     }
 }
-
-

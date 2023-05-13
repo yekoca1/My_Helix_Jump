@@ -12,10 +12,13 @@ public class GameManager : MonoBehaviour
 {
    private int score = 0;
    public TextMeshProUGUI scoreText;
-   public string nextLevelName;
+   //public TextMeshProUGUI winText;
+   public string nextLevelName = "Level2";
+   //public static GameManager instance;
     void Start()
     {
         scoreText = GameObject.FindObjectOfType<TextMeshProUGUI>();
+        //winText = GameObject.FindObjectOfType<TextMeshProUGUI>();
     }
 
     void Update()
@@ -32,12 +35,25 @@ public class GameManager : MonoBehaviour
     public void restartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1;
     }
 
     public void nextLevel()
     {
-            Debug.Log("Game Manager çalışıyor");
-            SceneManager.LoadScene(nextLevelName);
+        SceneManager.LoadScene(nextLevelName);
+        Time.timeScale = 1;
     }
-}
+    public void quitGame()
+    {
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #else
+            // Uygulamadan çıkış yap
+            Application.Quit();
+        #endif
 
+        // Oyunun başlangıç sahnesine geri dön
+        SceneManager.LoadScene("Menu");
+    }
+
+}
