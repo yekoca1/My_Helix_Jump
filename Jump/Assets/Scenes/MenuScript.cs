@@ -5,9 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
+    public LevelManager lm;
+
+    private void Start()
+    {
+        //lm = FindObjectOfType<LevelManager>();
+    }
+
     public void play()
     {
-        SceneManager.LoadScene(1);
+        //lm.SaveCurrentScene(); // Mevcut sahneyi kaydet
+        SceneManager.LoadScene(1); // Yeni sahneyi yükle
     }
 
     public void quit()
@@ -19,3 +27,4 @@ public class MenuScript : MonoBehaviour
         #endif
     }
 }
+

@@ -361,11 +361,13 @@
 "Assets/Scripts/Ball.cs"
 "Assets/Scripts/cameraFollow.cs"
 "Assets/Scripts/GameManager.cs"
+"Assets/Scripts/LevelManager.cs"
 "Assets/Scripts/Ring.cs"
 "Assets/Scripts/Rotate.cs"
 "Assets/Scripts/SoundScripts/FailedSounder.cs"
 "Assets/Scripts/SoundScripts/FinishSounder.cs"
 "Assets/Scripts/SoundScripts/voiceController.cs"
+"Assets/Scripts/WinLoose.cs"
 -langversion:9.0
 
 /deterministic

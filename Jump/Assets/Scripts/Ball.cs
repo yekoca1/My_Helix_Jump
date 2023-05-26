@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Ball : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class Ball : MonoBehaviour
     public voiceController vc;  // hit sesi için
     public FinishSounder fs; // bitiş sesi
     public FailedSounder fail;
+
     void Start()
     {
         gm = GameObject.FindObjectOfType<GameManager>();
@@ -27,7 +29,6 @@ public class Ball : MonoBehaviour
         nextButton.SetActive(false); 
         quitButton.SetActive(false);
         //gm.winText.gameObject.SetActive(false);
-       
     }
 
     // Update is called once per frame
@@ -64,4 +65,30 @@ public class Ball : MonoBehaviour
         }
 
     }
+
+    //LEVELMANAGER SCRİPTİNİ ÇAĞIRACAĞIMIZ VE BU SCRİPTTE KULLANACAĞIMIZ FONKSİYONLAR !!!!
+
+    
+    /*private void SaveCurrentLevel()
+    {
+        int currentLevel = GetCurrentLevelIndex();
+        levelManager.SaveLevel(currentLevel);
+    }
+
+    private int GetCurrentLevelIndex()
+    {
+        int currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
+        return currentLevelIndex;
+    }
+
+    private void LoadSavedLevel()
+    {
+        if (levelManager != null) {
+            int savedLevel = levelManager.LoadLevel();
+            // Kaydedilen seviye varsa, o seviyeyi yükle, yoksa mevcut sahneyi yükle
+            SceneManager.LoadScene(savedLevel != -1 ? savedLevel : GetCurrentLevelIndex());
+        } else {
+            Debug.LogError("Level Manager is not initialized");
+        }
+    }*/
 }

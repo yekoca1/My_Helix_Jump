@@ -15,8 +15,11 @@ public class GameManager : MonoBehaviour
    //public TextMeshProUGUI winText;
    public string nextLevelName = "Level2";
    //public static GameManager instance;
+   public LevelManager levelManager;
     void Start()
-    {
+    {    
+        levelManager = FindObjectOfType<LevelManager>();
+        levelManager.SaveCurrentScene();
         scoreText = GameObject.FindObjectOfType<TextMeshProUGUI>();
         //winText = GameObject.FindObjectOfType<TextMeshProUGUI>();
     }
@@ -34,26 +37,26 @@ public class GameManager : MonoBehaviour
 
     public void restartGame()
     {
+        levelManager.SaveCurrentScene(); 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
     }
 
     public void nextLevel()
     {
+        levelManager.SaveCurrentScene();
         SceneManager.LoadScene(nextLevelName);
         Time.timeScale = 1;
     }
-    public void quitGame()
+
+    public void quit()
     {
+        levelManager.SaveCurrentScene(); 
         #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
         #else
-            // Uygulamadan çıkış yap
             Application.Quit();
         #endif
-
-        // Oyunun başlangıç sahnesine geri dön
-        SceneManager.LoadScene("Menu");
     }
 
 }
